@@ -112,7 +112,12 @@ public class TypoDots  {
 			}
 		}
 	}
-	float noiseCount = 0;
+
+	private float noiseCount = 0;
+	private float noiseSpeed = 0.01;
+	public void setNoiseSpeed(float velocity) {
+		noiseSpeed = velocity;
+	}
 	public void perlinNoise(float amp) {
 		for(int i = 0; i < dots3D.size(); i++){
 			PVector d = dots3D.get(i);
@@ -121,6 +126,6 @@ public class TypoDots  {
 			d.y = amp*(noise(noiseCount+db.y)) + db.y;
 			d.z = amp*(noise(noiseCount+db.z)) + db.z;
 		}
-		noiseCount+=0.01;
+		noiseCount+=noiseSpeed;
 	}
 }

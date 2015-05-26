@@ -1,10 +1,11 @@
 // coded by Yota Odaka
 TypoDots myTypography;
 void setup(){
-	size(displayWidth, displayHeight, P3D);
+	size(1280, 720, P3D);
 	myTypography = new TypoDots();
 	myTypography.setThickness(15);
 	myTypography.setDensity(.11);
+	myTypography.setNoiseSpeed(0.08);
 	myTypography.initialize();
 }
 
